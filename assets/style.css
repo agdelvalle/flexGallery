@@ -1,0 +1,145 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    font-family: 'Sedgwick Ave', cursive;
+}
+
+
+.container{
+    display: flex;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.panel {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: whitesmoke;
+    flex: 1;
+    font-size: 2em;
+    transition: 
+        /* font-size 0.7s cubic-bezier(0.6, -0.28, 0.735, 0.045), */
+        flex 0.7s cubic-bezier(0.6, -0.28, 0.735, 0.045),
+        box-shadow 0.2s;
+}
+
+/* panel children */
+.panel > * {
+    margin: 0;
+    width: 100%;
+    transition: transform 0.5s;
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.center{
+    font-size: 4rem;
+}
+
+/* 
+.panel:hover{
+    background-color: purple;
+} */
+
+.panel1{
+    background-color: #C9C5BA;
+}
+
+.panel2{
+    background-color: #EBBAB9;
+}
+
+.panel3{
+    background-color: #97B1A6;
+}
+
+.panel4{
+    background-color: #698996;
+}
+
+.panel5{
+    background-color: #407076;
+}
+
+.open{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+@media only screen and (min-width: 280px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-height: 100vh;
+    }
+
+    .open{
+        flex: 3;
+    }
+
+    .panel > *:first-child{
+        transform: translateX(-100%);
+    }
+    
+    .panel > *:last-child{
+        transform: translateX(100%);
+    }
+
+    .open-active{
+        transform: translateX(0);
+    }
+    
+    .panel.open-active > *:first-child{
+        transform: translateX(0);
+    }
+    
+    .panel.open-active> *:last-child{
+        transform: translateX(0);
+    }
+    
+}
+
+@media only screen and (min-width: 600px) {
+    .container{
+        display: flex;
+        flex-direction: row;
+        /* flex: 1; */
+        min-height: 100vh;
+    }
+
+    .open{
+        flex: 5;
+    }
+
+    .panel > *:first-child{
+        transform: translateY(-100%);
+    }
+    
+    .panel > *:last-child{
+        transform: translateY(100%);
+    }
+
+    .open-active{
+        transform: translateY(0);
+    }
+    
+    .panel.open-active > *:first-child{
+        transform: translateY(0);
+    }
+    
+    .panel.open-active> *:last-child{
+        transform: translateY(0);
+    }
+    
+}

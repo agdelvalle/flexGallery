@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link to fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
+    <!-- link to stylesheet -->
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Flexbox</title>
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel1">
+            <p>Hi,</p>
+            <p class="center">I</p>
+            <p>love you</p>
+        </div>
+        <div class="panel panel2">
+            <p>You make</p>
+            <p class="center">love</p>
+            <p>feel so good</p>
+        </div>
+        <div class="panel panel3">
+            <p>Loving</p>
+            <p class="center">you</p>
+            <p>is worth it</p>
+        </div>
+        <div class="panel panel4">
+            <p>Because you're</p>
+            <p class="center">very</p>
+            <p>special</p>
+        </div>
+        <div class="panel panel5">
+            <p>You bring so</p>
+            <p class="center">much</p>
+            <p>joy & warmth</p>
+        </div>
+    </div>
+<!-- Javascript -->
+    <script>
+        var panels = document.querySelectorAll('.panel');
+
+        function toggleOpen(){
+            this.classList.toggle('open');
+        }
+
+        function toggleActive(e){
+            if(e.propertyName.includes('flex')){
+                console.log(e.propertyName);
+                this.classList.toggle('open-active');
+            }
+        }
+
+        panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+        panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+
+
+    </script>
+</body>
+</html>
